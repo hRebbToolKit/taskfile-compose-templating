@@ -1,0 +1,10 @@
+services:
+  web:
+    image: "nginx:latest"
+    environment:
+      - APP_ENV=production
+  database:
+    image: "postgres:15"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=supersecret

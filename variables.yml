@@ -1,0 +1,5 @@
+nginx_version: "latest"
+postgres_version: "15"
+app_env: "production"
+db_user: "admin"
+db_password: "supersecret"

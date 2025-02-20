@@ -1,0 +1,26 @@
+version: '3'
+
+env:
+  disable_dotenv: true
+
+tasks:
+  generate:
+    desc: "Générer le fichier docker-compose.yml"
+    cmds:
+      - python render.py
+    sources:
+      - docker-compose.yml.tmpl
+      - variables.yml
+    generates:
+      - docker-compose.yml
+
+  up:
+    desc: "Générer et démarrer Docker Compose"
+    deps: [generate]
+    cmds:
+      - docker-compose up -d
+
+  down:
+    desc: "Arrêter les conteneurs Docker Compose"
+    cmds:
+      - docker-compose down
